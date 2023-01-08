@@ -3,12 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement } from "./counterSlice";
 
 function Counter() {
-  const { count } = useSelector((state) => state.counter.count);
+  const count = useSelector((state) => state.counter.count);
   const dispatch = useDispatch();
   return (
-    <div>
-      {count}
-
+    <div className="center">
+      <div> {count}</div>
       <div onClick={() => dispatch(increment())}>+</div>
       <div onClick={() => dispatch(decrement())}>-</div>
     </div>
